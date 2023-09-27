@@ -4,7 +4,7 @@
   "description": "Backend application where users are able to create notes about his/her favorites movies.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --watch src/server.js"
   },
   "repository": {
     "type": "git",
