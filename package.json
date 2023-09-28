@@ -1,0 +1,24 @@
+{
+  "name": "movies-notes",
+  "version": "1.0.0",
+  "description": "Backend application where users are able to create notes about his/her favorites movies.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damian-nestea/movies-notes.git"
+  },
+  "keywords": [],
+  "author": "Jair Damián Martínez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damian-nestea/movies-notes/issues"
+  },
+  "homepage": "https://github.com/damian-nestea/movies-notes#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1"
+  }
+}
