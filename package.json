@@ -4,7 +4,8 @@
   "description": "Backend application where users are able to create notes about his/her favorites movies.",
   "main": "index.js",
   "scripts": {
-    "start": "node --watch src/server.js"
+    "start": "node --watch src/server.js",
+    "migrate": "knex migrate:latest"
   },
   "repository": {
     "type": "git",
