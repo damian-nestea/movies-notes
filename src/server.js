@@ -13,7 +13,7 @@ migrationsRun();
 
 app.use((error, request, response, next) => {
   if (error instanceof AppError) {
-    return response.status(201).json({
+    return response.status(error.statusCode).json({
       message: error.message,
     });
   }
