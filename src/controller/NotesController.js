@@ -2,6 +2,16 @@ const knex = require("../database/knex");
 const AppError = require("../utils/AppError");
 
 class NotesController {
+  async index(request, response) {
+    const { user_id } = request.query;
+
+    const notes = await knex("movie_notes").where({ user_id }).orderBy("title");
+
+    console.log(notes);
+
+    return response.json(notes);
+  }
+
   async show(request, response) {
     const { id } = request.params;
 
@@ -51,6 +61,20 @@ class NotesController {
     }
 
     return response.json({ message: "Note created successfully" });
+  }
+
+  async delete(request, response) {
+    const { id } = request.params;
+
+    const noteExists = await knex("movie_notes").where({ id }).first();
+
+    if (!noteExists) {
+      throw new AppError("Note not found");
+    }
+
+    await knex("movie_notes").where({ id }).delete();
+
+    return response.json({ message: "Note deleted successfully" });
   }
 }
 
