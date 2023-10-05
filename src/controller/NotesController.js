@@ -59,6 +59,10 @@ class NotesController {
     const { user_id } = request.params;
     const { title, description, rating, tags } = request.body;
 
+    if (rating < 1 || rating > 5) {
+      throw new AppError("Rating must be a number between 1 and 5");
+    }
+
     const userExists = await knex("users").where({ id: user_id });
 
     if (userExists.length === 0) {
